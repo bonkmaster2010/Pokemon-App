@@ -1,0 +1,109 @@
+body {
+    font-family: system-ui;
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    flex-direction: column;
+
+}
+
+h2 {
+    margin: 0px;
+    padding: 0px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border: 6px solid #BBa53D;
+    border-radius: 8px;
+    width: 80%; /* Makes the card take 80% of the screen width */
+    max-width: 400px; /* Increases the maximum width */
+    padding: 20px; /* Adds space inside the card */
+
+  
+
+}
+
+#pokemon-sprite {
+    width: 200px;
+}
+
+input {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    padding: 8px;
+    border: 1px solid #BBa53D;
+}
+
+button {
+    padding: 10px;
+    font-size: 15px;
+    border: none;
+    border-radius: 7px;
+    color: white;
+    background-color: #BBa53D;
+    cursor: pointer;
+}
+
+.info {
+    display: flex;
+    flex-direction: row; /* Places Stats and Powers side by side */
+    justify-content: center; /* Centers the whole info section */
+    gap: 50px; /* Adjusted gap for a more balanced layout */
+}
+
+.info > div {
+    display: flex;
+    flex-direction: column; /* Stack Stats and Powers vertically */
+}
+
+.stats {
+    display: flex;
+    flex-direction: column; /* Stack the individual stats vertically */
+ 
+}
+
+span{
+    margin: 0px;
+    padding: 0px;
+}
+
+.stats-class{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+    
+}
+
+.info label {
+    font-weight: bold;
+    text-align: center; /* Center the label */
+    margin-bottom: 10px; /* Add space below the label */
+}
+
+.powers p{
+    margin: 0px;
+    padding: 0px;
+}
+
+.powers h4{
+    margin: 0px;
+    padding: 0px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.info p{
+    margin: 10px;
+    margin-left: 0px;
+}
+
+

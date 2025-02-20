@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> <div class="card">
+     <input type="text" placeholder="Enter A Pokemon Name" id="pokemon-name">
+      <button onclick="fetchdata()">Fetch Pokemon</button><br>
+     
+      <img src="" alt="Pokemon sprite" id="pokemon-sprite" style="display: none;">
+      <h2 id="namesmth"></h2>
+  
+
+       <div class="info">
+        
+        <div class="powers" id="powers">
+            <h3>Abilities</h3>
+            <h4>Ability (1)</h4>
+            <p id="power1">...</p>
+            <h4>Ability (2)</h4>
+            <p id="power2">...</p>
+         </div>
+    
+        <div class="stats" id="stats">
+            <h3>Stats</h3>
+            <div class="stats-class">
+                <p id="hp">HP</p><span id="hpvalue"></span>
+            </div>
+            <div class="stats-class">
+                <p id="atk">ATK</p><p id="atkvalue"></p>
+            </div>
+
+            <div class="stats-class">
+                <p id="def">DEF</p><p id="defvalue"></p>
+            </div>
+
+       
+            
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
