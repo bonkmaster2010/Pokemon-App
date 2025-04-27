@@ -1,15 +1,30 @@
-body {
-    font-family: system-ui;
-    display: flex;
-    justify-content: center; /* Centers horizontally */
-    align-items: center; /* Centers vertically */
-    flex-direction: column;
-
+:root {
+    --primary-color: #FFCB05;
+    --secondary-color: #3D7DCA;
+    --accent-color: #003A70;
+    --error-color: #FF0000;
+    --text-color: #333;
+    --light-text: #FFF;
+    --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
-    margin: 0px;
-    padding: 0px;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+    color: var(--text-color);
+}
+
+h1 {
+    color: var(--accent-color);
+    margin-bottom: 30px;
+    text-align: center;
 }
 
 .card {
@@ -17,93 +32,159 @@ h2 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    border: 6px solid #BBa53D;
-    border-radius: 8px;
-    width: 80%; /* Makes the card take 80% of the screen width */
-    max-width: 400px; /* Increases the maximum width */
-    padding: 20px; /* Adds space inside the card */
-
-  
-
+    border: 6px solid var(--primary-color);
+    border-radius: 15px;
+    width: 100%;
+    max-width: 400px;
+    padding: 25px;
+    background-color: white;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease;
 }
 
-#pokemon-sprite {
-    width: 200px;
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.search-container {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
 input {
-    margin-top: 15px;
-    margin-bottom: 10px;
-    border-radius: 3px;
-    padding: 8px;
-    border: 1px solid #BBa53D;
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid var(--primary-color);
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: var(--secondary-color);
 }
 
 button {
-    padding: 10px;
-    font-size: 15px;
+    padding: 12px 20px;
+    font-size: 16px;
     border: none;
-    border-radius: 7px;
-    color: white;
-    background-color: #BBa53D;
+    border-radius: 8px;
+    color: var(--light-text);
+    background-color: var(--secondary-color);
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+#pokemon-sprite {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    margin: 15px 0;
+    display: none;
+    image-rendering: crisp-edges;
+}
+
+.pokemon-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin: 10px 0;
+    text-transform: capitalize;
 }
 
 .info {
     display: flex;
-    flex-direction: row; /* Places Stats and Powers side by side */
-    justify-content: center; /* Centers the whole info section */
-    gap: 50px; /* Adjusted gap for a more balanced layout */
-}
-
-.info > div {
-    display: flex;
-    flex-direction: column; /* Stack Stats and Powers vertically */
-}
-
-.stats {
-    display: flex;
-    flex-direction: column; /* Stack the individual stats vertically */
- 
-}
-
-span{
-    margin: 0px;
-    padding: 0px;
-}
-
-.stats-class{
-    display: flex;
     flex-direction: row;
-    align-content: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.stats, .powers {
+    flex: 1;
+}
+
+.section-title {
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.stats-class {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 20px;
-    text-align: center;
-    
+    margin-bottom: 8px;
 }
 
-.info label {
+.stat-name {
     font-weight: bold;
-    text-align: center; /* Center the label */
-    margin-bottom: 10px; /* Add space below the label */
+    color: var(--accent-color);
 }
 
-.powers p{
-    margin: 0px;
-    padding: 0px;
+.stat-value {
+    font-weight: bold;
 }
 
-.powers h4{
-    margin: 0px;
-    padding: 0px;
-    margin-bottom: 10px;
+.ability {
+    margin-bottom: 15px;
+}
+
+.ability-name {
+    font-weight: bold;
+    color: var(--secondary-color);
+    text-transform: capitalize;
+}
+
+.error-message {
+    color: var(--error-color);
+    font-weight: bold;
     margin-top: 10px;
+    text-align: center;
+    display: none;
 }
 
-.info p{
-    margin: 10px;
-    margin-left: 0px;
+.loading {
+    display: none;
+    margin: 20px 0;
+    font-style: italic;
+    color: var(--secondary-color);
 }
 
+.type-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    margin-right: 5px;
+    text-transform: uppercase;
+}
 
+@media (max-width: 500px) {
+    .info {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .card {
+        padding: 15px;
+    }
+}

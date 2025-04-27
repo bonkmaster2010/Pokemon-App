@@ -6,41 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body> <div class="card">
-     <input type="text" placeholder="Enter A Pokemon Name" id="pokemon-name">
-      <button onclick="fetchdata()">Fetch Pokemon</button><br>
-     
-      <img src="" alt="Pokemon sprite" id="pokemon-sprite" style="display: none;">
-      <h2 id="namesmth"></h2>
-  
+<body>
 
-       <div class="info">
-        
-        <div class="powers" id="powers">
-            <h3>Abilities</h3>
-            <h4>Ability (1)</h4>
-            <p id="power1">...</p>
-            <h4>Ability (2)</h4>
-            <p id="power2">...</p>
-         </div>
+    <h1>Pokémon Explorer</h1>
     
-        <div class="stats" id="stats">
-            <h3>Stats</h3>
-            <div class="stats-class">
-                <p id="hp">HP</p><span id="hpvalue"></span>
+    <div class="card">
+        <div class="search-container">
+            <input type="text" placeholder="Enter a Pokémon name or ID" id="pokemon-name">
+            <button onclick="fetchData()">Search</button>
+        </div>
+        
+        <div class="loading" id="loading">Loading Pokémon data...</div>
+        <div class="error-message" id="error-message"></div>
+        
+        <img src="" alt="Pokemon sprite" id="pokemon-sprite">
+        <div class="pokemon-name" id="pokemon-name-display"></div>
+        <div id="pokemon-types"></div>
+        
+        <div class="info">
+            <div class="stats">
+                <h3 class="section-title">Stats</h3>
+                <div class="stats-class">
+                    <span class="stat-name">HP</span>
+                    <span class="stat-value" id="hp-value"></span>
+                </div>
+                <div class="stats-class">
+                    <span class="stat-name">Attack</span>
+                    <span class="stat-value" id="atk-value"></span>
+                </div>
+                <div class="stats-class">
+                    <span class="stat-name">Defense</span>
+                    <span class="stat-value" id="def-value"></span>
+                </div>
+                <div class="stats-class">
+                    <span class="stat-name">Speed</span>
+                    <span class="stat-value" id="speed-value"></span>
+                </div>
             </div>
-            <div class="stats-class">
-                <p id="atk">ATK</p><p id="atkvalue"></p>
-            </div>
-
-            <div class="stats-class">
-                <p id="def">DEF</p><p id="defvalue"></p>
-            </div>
-
-       
             
+            <div class="powers">
+                <h3 class="section-title">Abilities</h3>
+                <div class="ability">
+                    <div class="ability-name" id="ability-1"></div>
+                </div>
+                <div class="ability">
+                    <div class="ability-name" id="ability-2"></div>
+                </div>
+            </div>
         </div>
     </div>
+
     <script src="index.js"></script>
 </body>
 </html>
